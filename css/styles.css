@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -33,13 +32,13 @@ header .logo {
 }
 
 .meet-tutor img {
-    flex: 1;
-    max-width: 500px;
+    flex: 1 1 auto;
+    max-width: 100%;
     height: auto;
 }
 
 .meet-tutor .text {
-    flex: 2;
+    flex: 2 1 auto;
     padding-left: 2rem;
     font-size: large;
 }
@@ -83,6 +82,7 @@ header .logo {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .service {
@@ -98,8 +98,8 @@ header .logo {
 .service img {
     max-width: 100%;
     height: auto;
-    max-height: 300px; 
-    object-fit: cover; 
+    max-height: 300px;
+    object-fit: cover;
     margin-bottom: 1rem;
 }
 
@@ -163,7 +163,37 @@ header .logo {
 }
 
 .contact-info img {
-    width: 100%; 
-    max-width: 300px; 
-    height: auto; 
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .meet-tutor {
+        flex-direction: column;
+        text-align: center;
+    }
+    .meet-tutor .text {
+        padding-left: 0;
+        padding-top: 1rem;
+    }
+    .service-details {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service {
+        max-width: 100%;
+    }
+    .review-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .review {
+        max-width: 100%;
+    }
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
