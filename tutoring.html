@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan the Tutor</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Ivan the Tutor</div>
+    </header>
+    <section class="meet-tutor">
+        <img src="images/perfectHeadshot.jpg" alt="Ivan the Tutor">
+        <div class="text">
+            <h2>Meet the Tutor</h2>
+            <p>My name is Ivan Moreno, and I am a USC graduate in astronautical engineering, pursuing a master's education at UCLA. I first started my tutoring journey as a high school teaching aide, and now I have most recently tutored AP Calculus AB to great success. I teach the following subjects:</p>
+            <ul>
+                <li>Algebra I/II</li>
+                <li>Geometry</li>
+                <li>Trigonometry</li>
+                <li>Pre-Calculus</li>
+                <li>AP Calculus AB/BC</li>
+                <li>Calculus I/II/III</li>
+                <li>Chemistry</li>
+                <li>Physics</li>
+                <li>Python</li>
+            </ul>
+            <button onclick="scrollToContact()">Contact Me</button>
+        </div>
+    </section>
+    <section class="services">
+        <h1>K-12/College STEM Tutoring</h1>
+        <h2>$30/hour, <strong>First Lesson Free</strong></h2>
+        <div class="service-details">
+            <div class="service">
+                <h3>Online Tutoring</h3>
+                <img src="images/onlineTutor.png" alt="Online Tutoring">
+                <p>For those who prefer, I have great success in doing online tutoring through Zoom where I walk students through personalized and interactive lessons and worksheets. I utilize high-quality screen sharing at the benefit of the student's ability to digest the content.</p>
+            </div>
+            <div class="service">
+                <h3>In-Person Tutoring</h3>
+                <img src="images/headshotTutor.jpg" alt="In-Person Tutoring">
+                <p>For those in the Los Angeles area, I am able to bring my passionate teaching straight to the home. I shine best in-person where I can use visual learning and tailored resources to elevate my students' learning to the next level. Group lessons are also available!</p>
+            </div>
+        </div>
+    </section>
+    <section class="reviews">
+        <h2>Reviews</h2>
+        <div class="review-container">
+            <div class="review">
+                <h3>Abe R.</h3>
+                <p>"To potential tutees, I say do yourself a favor and utilize Ivan, not only is he extremely intelligent he is also very personable with outstanding character and morals. Oh and not to mention he is very patient and understanding an does not get flustered if you have a hard time understanding a concept like some tutors; he will respectfully and kindly take the time to make sure you grasp the concept no matter what."</p>
+            </div>
+            <div class="review">
+                <h3>Colin</h3>
+                <p>"I have done pretty well in calculus so far and I feel like that has a lot to do with his tutoring and the strong base I had going into the year, so I am very appreciative of his help."</p>
+                <h3>Jason E.</h3>
+                <p>"Ivan is someone that I have to credit for my success in many math related classes as a direct result of his outstanding tutoring skills."</p>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p style="padding-bottom: 1rem;">If you have any questions or would like to schedule a lesson, please get in touch!</p>
+                <p><b>818-530-6758</b></p>
+                <p><b>ivanmoreno71669@gmail.com</b></p>
+                <p style="padding-bottom: 1rem;"><b>Sherman Oaks, California</b></p>
+                <img src="images/headshot2.png" alt="Contact">
+            </div>
+            <div class="contact-form">
+                <form action="https://formsubmit.co/7e697d4f1a2dd994c288257e0d462b85" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea style="height: 300px;" id="message" placeholder="Your Message"></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+    </script>
+</body>
+</html>

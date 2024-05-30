@@ -1,0 +1,169 @@
+/* CSS reset to ensure consistency across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles for the body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding-bottom: 100px; /* Ensure footer visibility */
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: left;
+}
+
+header .logo {
+    font-size: 2rem;
+}
+
+.meet-tutor {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background: #fff;
+    margin: 1rem;
+}
+
+.meet-tutor img {
+    flex: 1;
+    max-width: 500px;
+    height: auto;
+}
+
+.meet-tutor .text {
+    flex: 2;
+    padding-left: 2rem;
+    font-size: large;
+}
+
+.meet-tutor h2 {
+    margin-bottom: 2rem;
+    font-size: xx-large;
+}
+
+.meet-tutor ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+}
+
+.meet-tutor button {
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: x-large;
+}
+
+.services {
+    text-align: center;
+    padding: 2rem;
+    background: #eaeaea;
+    margin: 1rem 0;
+}
+
+.services h1 {
+    margin-bottom: 1rem;
+}
+
+.services h2 {
+    margin-bottom: 2rem;
+}
+
+.service-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.service {
+    background: #fff;
+    padding: 1rem;
+    max-width: 600px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px; /* Adjust this value as needed */
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+    margin-bottom: 1rem;
+}
+
+.reviews {
+    padding: 2rem;
+    background: #fff;
+    text-align: center;
+    margin: 1rem;
+}
+
+.review-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.review {
+    max-width: 30%;
+    margin: 1rem 0;
+}
+
+.contact {
+    padding: 2rem;
+    background: #eaeaea;
+    margin: 1rem 0;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-form {
+    flex: 1;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.contact-info img {
+    width: 100%; /* Adjust the width as needed, for example: 50%, 200px, etc. */
+    max-width: 300px; /* Ensure the image does not exceed a certain width */
+    height: auto; /* Maintain the aspect ratio */
+}
