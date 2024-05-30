@@ -83,6 +83,7 @@ header .logo {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .service {
@@ -153,6 +154,12 @@ header .logo {
     border: 1px solid #ccc;
 }
 
+.contact-form textarea {
+    resize: vertical;
+    text-align: left; /* Start text from the top left */
+    vertical-align: top; /* Ensure the text starts at the top */
+}
+
 .contact-form button {
     background: #000;
     color: #fff;
@@ -166,4 +173,34 @@ header .logo {
     width: 100%; /* Adjust the width as needed, for example: 50%, 200px, etc. */
     max-width: 300px; /* Ensure the image does not exceed a certain width */
     height: auto; /* Maintain the aspect ratio */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .meet-tutor {
+        flex-direction: column;
+        text-align: center;
+    }
+    .meet-tutor .text {
+        padding-left: 0;
+        padding-top: 1rem;
+    }
+    .service-details {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service {
+        max-width: 100%;
+    }
+    .review-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .review {
+        max-width: 100%;
+    }
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
