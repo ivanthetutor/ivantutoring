@@ -5,11 +5,12 @@
     box-sizing: border-box;
 }
 
+/* Basic styles for the body */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
-    padding-bottom: 100px; 
+    padding-bottom: 100px; /* Ensure footer visibility */
 }
 
 header {
@@ -32,13 +33,13 @@ header .logo {
 }
 
 .meet-tutor img {
-    flex: 1 1 auto;
-    max-width: 100%;
+    flex: 1;
+    max-width: 500px;
     height: auto;
 }
 
 .meet-tutor .text {
-    flex: 2 1 auto;
+    flex: 2;
     padding-left: 2rem;
     font-size: large;
 }
@@ -82,7 +83,6 @@ header .logo {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
 }
 
 .service {
@@ -98,8 +98,8 @@ header .logo {
 .service img {
     max-width: 100%;
     height: auto;
-    max-height: 300px;
-    object-fit: cover;
+    max-height: 300px; /* Adjust this value as needed */
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
     margin-bottom: 1rem;
 }
 
@@ -163,37 +163,7 @@ header .logo {
 }
 
 .contact-info img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .meet-tutor {
-        flex-direction: column;
-        text-align: center;
-    }
-    .meet-tutor .text {
-        padding-left: 0;
-        padding-top: 1rem;
-    }
-    .service-details {
-        flex-direction: column;
-        align-items: center;
-    }
-    .service {
-        max-width: 100%;
-    }
-    .review-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .review {
-        max-width: 100%;
-    }
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
-    }
+    width: 100%; /* Adjust the width as needed, for example: 50%, 200px, etc. */
+    max-width: 300px; /* Ensure the image does not exceed a certain width */
+    height: auto; /* Maintain the aspect ratio */
 }
