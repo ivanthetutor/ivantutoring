@@ -30,6 +30,7 @@ header .logo {
     padding: 2rem;
     background: #fff;
     margin: 1rem;
+    align-items: center;
 }
 
 .meet-tutor img {
@@ -83,6 +84,7 @@ header .logo {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .service {
@@ -166,4 +168,44 @@ header .logo {
     width: 100%; /* Adjust the width as needed, for example: 50%, 200px, etc. */
     max-width: 300px; /* Ensure the image does not exceed a certain width */
     height: auto; /* Maintain the aspect ratio */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .meet-tutor {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    .meet-tutor img {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    .meet-tutor .text {
+        padding-left: 0;
+        padding-top: 1rem;
+    }
+    .service-details {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
+    }
+    .service {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    .review-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
+    }
+    .review {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
+    }
 }
