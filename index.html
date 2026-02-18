@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ivan the Tutor</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -14,7 +15,7 @@
         <img src="images/perfectHeadshot.jpg" alt="Ivan the Tutor">
         <div class="text">
             <h2>Meet the Tutor</h2>
-            <p>My name is Ivan Moreno, and I am a master's graduate with a bachelor's degree in astronautical engineering and my master's degree mechanical engineering at UCLA. I first started my tutoring journey as a high school teaching aide, and now I have most recently tutored AP Calculus AB to great success. I teach the following subjects:</p>
+            <p>My name is Ivan Moreno, and I am a USC graduate in astronautical engineering, pursuing a master's education at UCLA. I first started my tutoring journey as a high school teaching aide, and now I have most recently tutored AP Calculus AB to great success. I teach the following subjects:</p>
             <ul>
                 <li>Algebra I/II</li>
                 <li>Geometry</li>
@@ -31,7 +32,7 @@
     </section>
     <section class="services">
         <h1>K-12/College STEM Tutoring</h1>
-        <h2>$35/hour</h2>
+        <h2>$40/hour</h2>
         <div class="service-details">
             <div class="service">
                 <h3>Online Tutoring</h3>
@@ -71,11 +72,12 @@
                 <img src="images/headshot2.png" alt="Contact">
             </div>
             <div class="contact-form">
-                <form action="https://formsubmit.co/7e697d4f1a2dd994c288257e0d462b85" method="POST">
+                <form id="contact-form" action="https://formsubmit.co/7e697d4f1a2dd994c288257e0d462b85" method="POST">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="response" style="height: 300px" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send</button>
+                    <p id="form-message" class="form-message" style="display: none; margin: 0.5rem 0;"></p>
+                    <button type="submit" id="submit-btn">Send</button>
                 </form>
             </div>
         </div>
@@ -84,6 +86,37 @@
         function scrollToContact() {
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
+
+        $(function () {
+            $('#contact-form').on('submit', function (e) {
+                e.preventDefault();
+
+                var $form = $(this);
+                var $btn = $('#submit-btn');
+                var $msg = $('#form-message');
+
+                $msg.hide().removeClass('success error');
+                $btn.prop('disabled', true);
+
+                $.ajax({
+                    method: 'POST',
+                    url: 'https://formsubmit.co/ajax/7e697d4f1a2dd994c288257e0d462b85',
+                    dataType: 'json',
+                    accepts: 'application/json',
+                    data: $form.serialize(),
+                    success: function (data) {
+                        $msg.addClass('success').css('color', 'green').text('Message sent! I\'ll get back to you soon.').show();
+                        $form[0].reset();
+                    },
+                    error: function (xhr) {
+                        $msg.addClass('error').css('color', '#c00').text('Something went wrong. Please try again or email me directly.').show();
+                    },
+                    complete: function () {
+                        $btn.prop('disabled', false);
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
