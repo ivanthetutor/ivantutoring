@@ -475,6 +475,11 @@ body {
   }
 }
 
+@media (max-width: 992px) {
+  .main.main_home {
+    min-height: 22rem;
+  }
+}
 
 .main__container {
   display: flex;
@@ -3410,11 +3415,10 @@ iframe {
 
 /* ****************ADAPTIVE**************** */
 
-/* Tablet/mobile: hero height ~30% below desktop (70vh → 49vh) */
+/* Tablet/mobile: hero height ~30% below desktop (70vh → 49vh); home hero excluded */
 @media (max-width: 992px) {
-  .main:not(.main_contact):not(.main_heroless),
+  .main:not(.main_contact):not(.main_heroless):not(.main_home),
   .main_pages:not(.main_contact):not(.main_heroless),
-  .main.main_home,
   .main.main_industries,
   .main_pages.main_aerospace,
   .main_pages.main_automotive,
@@ -3437,13 +3441,6 @@ iframe {
     height: 49vh;
     min-height: 15.5rem;
     max-height: 49vh;
-  }
-
-  /* Home hero: slightly taller than other pages so title, text, and CTA fit on mobile */
-  .main.main_home {
-    height: 58vh;
-    min-height: 19rem;
-    max-height: 62vh;
   }
 
   .about__image {
@@ -4169,7 +4166,7 @@ iframe {
     padding-bottom: 80px;
   }
 
-  .main:not(.main_contact):not(.main_heroless),
+  .main:not(.main_contact):not(.main_heroless):not(.main_home),
   .main_pages:not(.main_contact):not(.main_heroless),
   .main_services,
   .main_about,
@@ -4210,27 +4207,13 @@ iframe {
     padding: 1.5rem 0;
   }
 
+  /* Home hero: content height on phone (unchanged from original mobile layout) */
   .main.main_home {
-    height: 64vh;
-    min-height: 22.5rem;
-    max-height: 68vh;
-    padding: 1.25rem 0 2.25rem;
-  }
-
-  .main.main_home .main__container {
-    padding-top: 0.5rem;
-    padding-bottom: 1.5rem;
-    justify-content: flex-start;
-    min-height: 100%;
-    box-sizing: border-box;
-  }
-
-  .main.main_home .main__title {
-    margin-bottom: 0.65rem;
-  }
-
-  .main.main_home .main__text {
-    margin-bottom: 1.25rem;
+    display: block;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    padding: 1.5rem 0;
   }
 
   .main__container,
