@@ -774,18 +774,30 @@ body {
 }
 
 .item-services__image {
+  position: relative;
   margin-bottom: 1.5rem;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
+  aspect-ratio: 2390 / 1792;
+  overflow: hidden;
+  border-radius: var(--radius-md);
 }
 
 .item-services__image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: contain;
   border-radius: var(--radius-md);
+}
+
+/* Wider source image: fill the same fixed box as sibling product images */
+.item-services__image--o-rings img {
+  object-fit: cover;
+  object-position: center;
 }
 
 .item-services__title {
@@ -1978,6 +1990,243 @@ body {
   font-size: 0.9rem;
 }
 
+/* Industry cards: color image default, photo background on hover */
+.industry-card--aerospace,
+.industry-card--automotive,
+.industry-card--chemical,
+.industry-card--semiconductor,
+.industry-card--electronics,
+.industry-card--food-water,
+.industry-card--oil-gas,
+.industry-card--sustainable-power {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 22rem;
+  padding: 2rem;
+  border-top: none;
+  background-color: #1e2a3a;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.industry-card--aerospace::before,
+.industry-card--automotive::before,
+.industry-card--chemical::before,
+.industry-card--semiconductor::before,
+.industry-card--electronics::before,
+.industry-card--food-water::before,
+.industry-card--oil-gas::before,
+.industry-card--sustainable-power::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(4, 8, 15, 0.35) 0%,
+    rgba(4, 8, 15, 0.72) 55%,
+    rgba(4, 8, 15, 0.9) 100%
+  );
+  transition: opacity 0.4s ease;
+}
+
+.industry-card--aerospace::after,
+.industry-card--automotive::after,
+.industry-card--chemical::after,
+.industry-card--semiconductor::after,
+.industry-card--electronics::after,
+.industry-card--food-water::after,
+.industry-card--oil-gas::after,
+.industry-card--sustainable-power::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.industry-card--aerospace:hover::before,
+.industry-card--automotive:hover::before,
+.industry-card--chemical:hover::before,
+.industry-card--semiconductor:hover::before,
+.industry-card--electronics:hover::before,
+.industry-card--food-water:hover::before,
+.industry-card--oil-gas:hover::before,
+.industry-card--sustainable-power:hover::before {
+  opacity: 0.82;
+}
+
+.industry-card--aerospace:hover::after,
+.industry-card--automotive:hover::after,
+.industry-card--chemical:hover::after,
+.industry-card--semiconductor:hover::after,
+.industry-card--electronics:hover::after,
+.industry-card--food-water:hover::after,
+.industry-card--oil-gas:hover::after,
+.industry-card--sustainable-power:hover::after {
+  opacity: 1;
+}
+
+.industry-card--aerospace > *,
+.industry-card--automotive > *,
+.industry-card--chemical > *,
+.industry-card--semiconductor > *,
+.industry-card--electronics > *,
+.industry-card--food-water > *,
+.industry-card--oil-gas > *,
+.industry-card--sustainable-power > * {
+  position: relative;
+  z-index: 2;
+}
+
+.industry-card--aerospace .industry-card__title,
+.industry-card--automotive .industry-card__title,
+.industry-card--chemical .industry-card__title,
+.industry-card--semiconductor .industry-card__title,
+.industry-card--electronics .industry-card__title,
+.industry-card--food-water .industry-card__title,
+.industry-card--oil-gas .industry-card__title,
+.industry-card--sustainable-power .industry-card__title {
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+
+.industry-card--aerospace .industry-card__description,
+.industry-card--automotive .industry-card__description,
+.industry-card--chemical .industry-card__description,
+.industry-card--semiconductor .industry-card__description,
+.industry-card--electronics .industry-card__description,
+.industry-card--food-water .industry-card__description,
+.industry-card--oil-gas .industry-card__description,
+.industry-card--sustainable-power .industry-card__description {
+  color: rgba(255, 255, 255, 0.92);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.industry-card--aerospace .industry-card__materials,
+.industry-card--automotive .industry-card__materials,
+.industry-card--chemical .industry-card__materials,
+.industry-card--semiconductor .industry-card__materials,
+.industry-card--electronics .industry-card__materials,
+.industry-card--food-water .industry-card__materials,
+.industry-card--oil-gas .industry-card__materials,
+.industry-card--sustainable-power .industry-card__materials {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.industry-card--aerospace:hover .industry-card__description,
+.industry-card--automotive:hover .industry-card__description,
+.industry-card--chemical:hover .industry-card__description,
+.industry-card--semiconductor:hover .industry-card__description,
+.industry-card--electronics:hover .industry-card__description,
+.industry-card--food-water:hover .industry-card__description,
+.industry-card--oil-gas:hover .industry-card__description,
+.industry-card--sustainable-power:hover .industry-card__description,
+.industry-card--aerospace:hover .industry-card__materials,
+.industry-card--automotive:hover .industry-card__materials,
+.industry-card--chemical:hover .industry-card__materials,
+.industry-card--semiconductor:hover .industry-card__materials,
+.industry-card--electronics:hover .industry-card__materials,
+.industry-card--food-water:hover .industry-card__materials,
+.industry-card--oil-gas:hover .industry-card__materials,
+.industry-card--sustainable-power:hover .industry-card__materials {
+  opacity: 1;
+  visibility: visible;
+}
+
+.industry-card--aerospace .industry-card__button,
+.industry-card--automotive .industry-card__button,
+.industry-card--chemical .industry-card__button,
+.industry-card--semiconductor .industry-card__button,
+.industry-card--electronics .industry-card__button,
+.industry-card--food-water .industry-card__button,
+.industry-card--oil-gas .industry-card__button,
+.industry-card--sustainable-power .industry-card__button {
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.industry-card--aerospace {
+  background-image: url("../img/industries/aerospace/garlastAerospaceColor.jpg");
+}
+
+.industry-card--aerospace::after {
+  background-image: url("../img/industries/aerospace/garlastAerospaceBackground.png");
+}
+
+.industry-card--automotive {
+  background-image: url("../img/industries/automotive/garlastAutomotiveColor.jpg");
+}
+
+.industry-card--automotive::after {
+  background-image: url("../img/industries/automotive/garlastAutomotiveBackground.png");
+}
+
+.industry-card--chemical {
+  background-image: url("../img/industries/chemical/garlastChemicalColor.jpg");
+}
+
+.industry-card--chemical::after {
+  background-image: url("../img/industries/chemical/garlastChemicalBackground.png");
+}
+
+.industry-card--semiconductor {
+  background-image: url("../img/industries/semiconductor/garlastSemiconductorColor.jpg");
+}
+
+.industry-card--semiconductor::after {
+  background-image: url("../img/industries/semiconductor/garlastSemiconductorBackground.png");
+}
+
+.industry-card--electronics {
+  background-image: url("../img/industries/electrical/garlastElectricalColor.jpg");
+}
+
+.industry-card--electronics::after {
+  background-image: url("../img/industries/electrical/garlastElectricalBackground.png");
+}
+
+.industry-card--food-water {
+  background-image: url("../img/industries/lifeSciences/garlastFoodLifeColor.jpg");
+}
+
+.industry-card--food-water::after {
+  background-image: url("../img/industries/lifeSciences/garlastFoodWaterHealthBackground.png");
+}
+
+.industry-card--oil-gas {
+  background-image: url("../img/industries/oilGas/garlastOilGasColor.jpg");
+}
+
+.industry-card--oil-gas::after {
+  background-image: url("../img/industries/oilGas/garlastOilGasBackground.png");
+}
+
+.industry-card--sustainable-power {
+  background-image: url("../img/industries/sustainability/garlastSustainablePowerColor.jpg");
+}
+
+.industry-card--sustainable-power::after {
+  background-image: url("../img/industries/sustainability/garlastSustainablePowerBackground.png");
+}
+
 /* Industries section on home page */
 .industries {
   background-color: #fff;
@@ -2021,29 +2270,29 @@ body {
 /* ****************INDUSTRY PAGES**************** */
 
 .main_aerospace {
-  background: url("../img/industries/aerospace/garlastAerospaceBackground.png") center top / cover no-repeat;
+  background: url("../img/industries/aerospace/garlastAerospaceColor.jpg") center top / cover no-repeat;
 }
 
 .main_automotive {
-  background: url("../img/industries/automotive/garlastAutomotiveBackground.png") center top / cover no-repeat;
+  background: url("../img/industries/automotive/garlastAutomotiveColor.jpg") center top / cover no-repeat;
 }
 .main_chemical {
-  background: url("../img/industries/chemical/garlastChemicalBackground.png") center top / cover no-repeat;
+  background: url("../img/industries/chemical/garlastChemicalColor.jpg") center top / cover no-repeat;
 }
 .main_semiconductor{
-  background: url("../img/industries/semiconductor/garlastSemiconductorBackground.png") center top / cover no-repeat;
+  background: url("../img/industries/semiconductor/garlastSemiconductorColor.jpg") center top / cover no-repeat;
 }
 .main_electronics{
-  background: url("../img/industries/electrical/garlastElectricalBackground.png") center top / cover no-repeat;
+  background: url("../img/industries/electrical/garlastElectricalColor.jpg") center top / cover no-repeat;
 }
 .main_food-water{
-  background: url("../img/industries/lifeSciences/garlastFoodWaterHealthBackground.png") center top / cover no-repeat;
+  background: url("../img/industries/lifeSciences/garlastFoodLifeColor.jpg") center top / cover no-repeat;
 }
 .main_oil-gas{
-  background: url("../img/industries/oilGas/garlastOilGasBackground.png") center top / cover no-repeat;
+  background: url("../img/industries/oilGas/garlastOilGasColor.jpg") center top / cover no-repeat;
 }
 .main_sustainable-power{
-  background: url("../img/industries/sustainability/garlastSustainablePowerBackground.png") center top / cover no-repeat;
+  background: url("../img/industries/sustainability/garlastSustainablePowerColor.jpg") center top / cover no-repeat;
 }
 .main_sizechart {
   background: url("../img/references/garlastMeasurement.png") center top / cover no-repeat;
