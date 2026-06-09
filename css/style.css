@@ -2227,6 +2227,28 @@ body {
   background-image: url("../img/industries/sustainability/garlastSustainablePowerBackground.png");
 }
 
+@media (max-width: 992px) {
+  .industry-card--aerospace .industry-card__description,
+  .industry-card--automotive .industry-card__description,
+  .industry-card--chemical .industry-card__description,
+  .industry-card--semiconductor .industry-card__description,
+  .industry-card--electronics .industry-card__description,
+  .industry-card--food-water .industry-card__description,
+  .industry-card--oil-gas .industry-card__description,
+  .industry-card--sustainable-power .industry-card__description,
+  .industry-card--aerospace .industry-card__materials,
+  .industry-card--automotive .industry-card__materials,
+  .industry-card--chemical .industry-card__materials,
+  .industry-card--semiconductor .industry-card__materials,
+  .industry-card--electronics .industry-card__materials,
+  .industry-card--food-water .industry-card__materials,
+  .industry-card--oil-gas .industry-card__materials,
+  .industry-card--sustainable-power .industry-card__materials {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 /* Industries section on home page */
 .industries {
   background-color: #fff;
