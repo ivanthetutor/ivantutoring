@@ -111,6 +111,7 @@ body {
 .industry-card__button.button,
 .document-card__button.button,
 .item-references__button.button,
+.references__button.button,
 .industries__button.button {
   color: var(--color-primary);
   background-color: var(--color-surface);
@@ -124,6 +125,7 @@ body {
 .industry-card__button.button:hover,
 .document-card__button.button:hover,
 .item-references__button.button:hover,
+.references__button.button:hover,
 .industries__button.button:hover {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
@@ -794,8 +796,8 @@ body {
   border-radius: var(--radius-md);
 }
 
-/* Wider source image: fill the same fixed box as sibling product images */
-.item-services__image--o-rings img {
+/* Wide source images: fill the same fixed box height as sibling product images */
+.item-services__image--cover img {
   object-fit: cover;
   object-position: center;
 }
@@ -840,6 +842,24 @@ body {
 .references__title {
   text-align: center;
   margin-bottom: 5rem;
+}
+
+.references__guide {
+  max-width: 46rem;
+  margin: 3rem auto 0;
+  text-align: center;
+  line-height: 1.6;
+  color: #666;
+}
+
+.references__button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.references__button {
+  text-decoration: none;
 }
 
 .references__row {
@@ -2405,6 +2425,11 @@ body {
   padding-bottom: 80px;
 }
 
+/* Hero pages already clear the header — drop duplicate top padding before content */
+.page__main:not(.main_heroless) + .page__industry .industry-page__container {
+  padding-top: 2rem;
+}
+
 .industry-page__content {
   display: flex;
   align-items: center;
@@ -2974,6 +2999,18 @@ body {
 
 .page__main.main_heroless {
   padding-bottom: 2rem;
+}
+
+.page__main.main_heroless:has(+ .industry-page--heroless) {
+  padding-bottom: 0;
+}
+
+.main_heroless:has(+ .industry-page--heroless) .main__container_pages {
+  padding-bottom: 0.5rem;
+}
+
+.page__main.main_heroless + .industry-page--heroless .industry-page__container {
+  padding-top: 0.5rem;
 }
 
 .contact__container {
