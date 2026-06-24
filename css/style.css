@@ -2346,6 +2346,20 @@ body {
   padding-bottom: 8.75rem;
 }
 
+/* Home page: reduce gap between About, References, and Industries */
+.page__about.about .about__container {
+  padding-bottom: 3.5rem;
+}
+
+.page__references.references .references__container {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.page__industries.industries .industries__container {
+  padding-top: 3.5rem;
+}
+
 .industries__title {
   text-align: center;
   margin-bottom: 5rem;
@@ -4627,6 +4641,19 @@ iframe {
     padding-top: 4.375rem;
     padding-bottom: 4.375rem;
     gap: 4rem;
+  }
+
+  .page__about.about .about__container {
+    padding-bottom: 2.5rem;
+  }
+
+  .page__references.references .references__container {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .page__industries.industries .industries__container {
+    padding-top: 2.5rem;
   }
 
   .about__intro-top {
